@@ -172,7 +172,14 @@
 
     [UIView animateWithDuration:0.25 animations:^{
         _lblPlaceHolder.transform = CGAffineTransformMakeScale(1, 1);
-        CGRect frame = CGRectMake(0, _textField.frame.origin.y, _lblPlaceHolder.frame.size.width, _textField.frame.size.height);
+        
+        CGFloat xPoint = 0;
+        if (_isCreateIconImage)
+            xPoint = _textField.frame.origin.x;
+        else
+            xPoint = 0;
+        
+        CGRect frame = CGRectMake(xPoint, _textField.frame.origin.y, _lblPlaceHolder.frame.size.width, _textField.frame.size.height);
         _lblPlaceHolder.frame = frame;
     }];
 }
@@ -262,22 +269,8 @@
         CGFloat valWidth;
         CGFloat valHeight;
         
-        /*if ([[Utilities sharedUtilities] devType] == kDeviceTypeIphone6p) {
-            
-            valWidth = _dropDownImage.size.width * carpan;
-            valHeight = _dropDownImage.size.height * carpan;
-            
-        }
-        else*/ {
-            
-            //if (carpan == 1)
-            //    carpan = 1;
-            //else
-            carpan = 0.7;
-            
-            valWidth = _dropDownImage.size.width * carpan;
-            valHeight = _dropDownImage.size.height * carpan;
-        }
+        valWidth = _dropDownImage.size.width * carpan;
+        valHeight = _dropDownImage.size.height * carpan;
         
         _textField.frame = CGRectMake(_textField.frame.origin.x, _textField.frame.origin.y, _textField.frame.size.width - 16 - valWidth, _textField.frame.size.height);
         
