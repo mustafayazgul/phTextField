@@ -3,4 +3,4 @@ UITextField With Animatable Placeholder For IOS-ObjectiveC
 
 
 
-Sample: https://gfycat.com/DecentNimbleAfricanfisheagle
+Sample: https://gfycat.com/AnguishedDiligentDwarfrabbit
